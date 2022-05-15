@@ -5,19 +5,20 @@ function onFormSubmit (event){
     const {
         elements: {email, password }
       } = event.currentTarget;
+      const emailEl = event.currentTarget.email.value;
+      const passwordEl = event.currentTarget.password.value;
+      console.log({emailEl, passwordEl});
     if (email.value === "" || password.value === "") {
         return alert("Заполните форму!");
       }
      
    
    const formData = new FormData(event.currentTarget);
-   console.log(formData);
-   formData.forEach((value, name) => {
-    console.log("name :", name);
-    console.log("value :", value);
+    
+   
 
     event.currentTarget.reset();
 
-   })
-}
+   }
+
 
